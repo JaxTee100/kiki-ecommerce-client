@@ -14,7 +14,7 @@ const itemsData = [
   { id: 7, name: "Scarf", price: 1.2, image: "/images/shoes.jpg" },
 ];
 
-const baseApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const baseApiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 export default function CreateOrder() {
   const [name, setName] = useState("");
@@ -68,7 +68,7 @@ export default function CreateOrder() {
     };
 
     try {
-      const response = await fetch(`${baseApiUrl}/orders`, {
+      const response = await fetch(`${baseApiUrl}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
